@@ -1,19 +1,17 @@
 public class Sorts{
   public static void selectionsort(int [] ary){
     int end = ary.length;
-    int point;
-    int storage;
-    for (int start = 0; start < end; start++){
-      point = start;
-      for (int i = start; i < end; i++){
-        if (ary[i] < ary[point]){
-          point = i;
+    for (int i = 0; i < end; i++){
+      int value = 0;
+      int a = ary[i];
+      for (int x = i + 1; x < end; x++){
+        if (ary[x] < a){
+          value = ary[i];
+          a = ary[x];
+          ary[x] = value;
+          ary[i] = a;
         }
       }
-      storage = ary[point];
-      ary[point] = arty[start];
-      ary[start] = storage;
-
     }
   }
 }
