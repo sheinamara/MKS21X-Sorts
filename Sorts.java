@@ -28,9 +28,10 @@ public class Sorts{
   public static void bubbleSort(int[] ary){
     for (int i = 0; i < ary.length - 1; i++){
       if (ary[i] > ary[i + 1]){
-        int temp = ary[i]; // the larger number
-        ary[i] = ary[i + 1]; // make the first element that shows up the smaller one
-        ary[i + 1] = temp; // make the later element that shows up the larger one
+        int big = ary[i]; // the larger number
+        int small = ary[i + 1]; // the smaller number
+        ary[i] = small; // make the first element that shows up the smaller one
+        ary[i + 1] = big; // make the later element that shows up the larger one
       }
     }
   }
