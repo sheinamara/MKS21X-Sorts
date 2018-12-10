@@ -8,15 +8,17 @@ public class Sorts{
   */
   public static void selectionSort(int[] ary){
     int end = ary.length;
-    for (int i = 0; i < end; i++){
-      int value = 0;
-      int a = ary[i];
-      for (int x = i + 1; x < end; x++){
-        if (ary[x] < a){
-          value = ary[i];
-          a = ary[x];
-          ary[x] = value;
-          ary[i] = a;
+    if (end > 1){ 
+      for (int i = 0; i < end; i++){
+        int value = 0;
+        int a = ary[i];
+        for (int x = i + 1; x < end; x++){
+          if (ary[x] < a){
+            value = ary[i];
+            a = ary[x];
+            ary[x] = value;
+            ary[i] = a;
+          }
         }
       }
     }
@@ -26,20 +28,29 @@ public class Sorts{
   *@param data  the elements to be sorted.
   */
   public static void bubbleSort(int[] ary){
-    for (int i = 0; i < ary.length - 1; i++){
-      int first = ary[i];
-      int second = ary[i + 1];
-      if (first > second){
-        ary[i] = second; // make the first element that shows up the smaller one
-        ary[i + 1] = first; // make the later element that shows up the larger one
+    int larger = 0;
+    if (ary.length > 1){
+      for (int i = 0; i < ary.length - 1; i++){
+	for (int x = 1; x < ary.length - i; x++){
+          if (ary[x - 1] > ary[x]){
+            larger = ary[x - 1];
+            ary[x - 1] = ary[x]; // make the first element that shows up the smaller one
+            ary[x] = larger; // make the later element that shows up the larger one
+          }
+        }  
       }
     }
   }
-
+  /** Insertion sort of an int array.
+  *Upon completion, the elements of the array will be in increasing order.
+  *@param data  the elements to be sorted.
+  */
+  public static void insertionSort(int[] ary){
+  }
 /////////////
 // TESTING //
 /////////////
-
+/*
   public static String printArray(int[] ary) {
     String output = "[";
     for(int i=0; i<ary.length-1; i++) {
@@ -144,5 +155,5 @@ public class Sorts{
       System.out.println("TEST CASE - FAIL");
     }
   }
-
+*/
 }
