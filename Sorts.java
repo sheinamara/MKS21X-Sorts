@@ -2,11 +2,11 @@ public class Sorts{
 ////////////
 // CODING //
 ////////////
-  /**Selection sort of an int array. 
+  /**Selection sort of an int array.
   *Upon completion, the elements of the array will be in increasing order.
   *@param data  the elements to be sorted.
   */
-  public static void selectionSort(int [] ary){
+  public static void selectionSort(int[] ary){
     int end = ary.length;
     for (int i = 0; i < end; i++){
       int value = 0;
@@ -21,17 +21,18 @@ public class Sorts{
       }
     }
   }
-  /**Bubble sort of an int array. 
+  /**Bubble sort of an int array.
   *Upon completion, the elements of the array will be in increasing order.
   *@param data  the elements to be sorted.
   */
-  public static void bubbleSort(int[] data){
+  public static void bubbleSort(int[] ary){
     for (int i = 0; i < ary.length - 1; i++){
       if (ary[i] > ary[i + 1]){
         int temp = ary[i]; // the larger number
         ary[i] = ary[i + 1]; // make the first element that shows up the smaller one
-	ary[i + 1] = temp; // make the later element that shows up the larger one
-    }	
+        ary[i + 1] = temp; // make the later element that shows up the larger one
+      }
+    }
   }
 
 /////////////
