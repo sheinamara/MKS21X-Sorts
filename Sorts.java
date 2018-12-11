@@ -8,7 +8,7 @@ public class Sorts{
   */
   public static void selectionSort(int[] ary){
     int end = ary.length;
-    if (end > 1){ 
+    if (end > 1){
       for (int i = 0; i < end; i++){
         int value = 0;
         int a = ary[i];
@@ -31,13 +31,13 @@ public class Sorts{
     int larger = 0;
     if (ary.length > 1){
       for (int i = 0; i < ary.length - 1; i++){
-	for (int x = 1; x < ary.length - i; x++){
+        for (int x = 1; x < ary.length - i; x++){
           if (ary[x - 1] > ary[x]){
             larger = ary[x - 1];
             ary[x - 1] = ary[x]; // make the first element that shows up the smaller one
             ary[x] = larger; // make the later element that shows up the larger one
           }
-        }  
+        }
       }
     }
   }
