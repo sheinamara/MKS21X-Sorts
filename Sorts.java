@@ -4,20 +4,20 @@ public class Sorts{
 ////////////
   /**Selection sort of an int array.
   *Upon completion, the elements of the array will be in increasing order.
-  *@param data  the elements to be sorted.
+  *@param data the elements to be sorted.
   */
-  public static void selectionSort(int[] ary){
-    int end = ary.length;
+  public static void selectionSort(int[] data){
+    int end = data.length;
     if (end > 1){
       for (int i = 0; i < end; i++){
         int value = 0;
-        int a = ary[i];
+        int a = data[i];
         for (int x = i + 1; x < end; x++){
-          if (ary[x] < a){
-            value = ary[i];
-            a = ary[x];
-            ary[x] = value;
-            ary[i] = a;
+          if (data[x] < a){
+            value = data[i];
+            a = data[x];
+            data[x] = value;
+            data[i] = a;
           }
         }
       }
@@ -27,15 +27,15 @@ public class Sorts{
   *Upon completion, the elements of the array will be in increasing order.
   *@param data  the elements to be sorted.
   */
-  public static void bubbleSort(int[] ary){
+  public static void bubbleSort(int[] data){
     int larger = 0;
-    if (ary.length > 1){
-      for (int i = 0; i < ary.length - 1; i++){
-        for (int x = 1; x < ary.length - i; x++){
-          if (ary[x - 1] > ary[x]){
-            larger = ary[x - 1];
-            ary[x - 1] = ary[x]; // make the first element that shows up the smaller one
-            ary[x] = larger; // make the later element that shows up the larger one
+    if (data.length > 1){
+      for (int i = 0; i < data.length - 1; i++){
+        for (int x = 1; x < data.length - i; x++){
+          if (data[x - 1] > data[x]){
+            larger = data[x - 1];
+            data[x - 1] = data[x]; // make the first element that shows up the smaller one
+            data[x] = larger; // make the later element that shows up the larger one
           }
         }
       }
@@ -45,18 +45,27 @@ public class Sorts{
   *Upon completion, the elements of the array will be in increasing order.
   *@param data  the elements to be sorted.
   */
-  public static void insertionSort(int[] ary){
+  public static void insertionSort(int[] data){
+    for (int i = 1; i < data.length; i++){
+      int current = data[i]; // start at the second element
+      int limit = i - 1; // the bordering element
+      while (limit >= 0 && data[limit] > current){
+        data[limit - 1] = data[limit];
+        limit = limit - 1
+      }
+      
+    }
   }
 /////////////
 // TESTING //
 /////////////
 /*
-  public static String printArray(int[] ary) {
+  public static String printArray(int[] data) {
     String output = "[";
-    for(int i=0; i<ary.length-1; i++) {
-      output += ary[i] + ", ";
+    for(int i=0; i<data.length-1; i++) {
+      output += data[i] + ", ";
     }
-    return output += ary[ary.length-1] + "]";
+    return output += data[data.length-1] + "]";
   }
 
   public static void main(String[] args) {
