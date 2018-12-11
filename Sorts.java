@@ -50,10 +50,10 @@ public class Sorts{
       int current = data[i]; // start at the second element
       int limit = i - 1; // the bordering element
       while (limit >= 0 && data[limit] > current){
-        data[limit - 1] = data[limit];
-        limit = limit - 1
+        data[limit + 1] = data[limit];
+        limit = limit - 1;
       }
-      
+      data[limit + 1] = current;
     }
   }
 /////////////
